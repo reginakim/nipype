@@ -421,14 +421,14 @@ class BaseInterface(Interface):
             for name in names:
                 max_ver = LooseVersion(
                     str(trait_object.traits()[name].max_ver))
-                if max_ver < version:
-                    unavailable_traits.append(name)
-                    if not isdefined(getattr(trait_object, name)):
-                        continue
-                    if raise_exception:
-                        raise Exception(
-                            'Trait %s (%s) (version %s > required %s)' %
-                            (name, self.__class__.__name__, version, max_ver))
+                #if max_ver < version:
+                #    unavailable_traits.append(name)
+                #    if not isdefined(getattr(trait_object, name)):
+                #        continue
+                #    if raise_exception:
+                #        raise Exception(
+                #            'Trait %s (%s) (version %s > required %s)' %
+                #            (name, self.__class__.__name__, version, max_ver))
         return unavailable_traits
 
     def _run_interface(self, runtime):
